@@ -1,14 +1,14 @@
-Run this to create the virtual environment: 
-source venv/bin/activate
-******************************************
 Resource Collection:
 https://srisrithakuranukulchandra.com/download-categories/original-sri-sri-thakurs-literature/
+
 ******************************************
+
 Update to GitHub:
 
 git add .
 git commit -m "Brief description of what you changed"
 git push
+
 ******************************************
 
 To start the project, you need to do three things:
@@ -16,14 +16,43 @@ To start the project, you need to do three things:
 Start Frontend: (Inside frontend, open a terminal and type this)
 => npm start
 
+(Check: http://localhost:3000/)
 
 Start Virtual Environment: (Inside the guru-platform, open a terminal and type this)
 => source venv/bin/activate
 
 
 Start Backend: (After starting virtual environment or inside venv, type this)
+=> ollama serve &
 => uvicorn main:app --reload --port 8000
 
+(Check: http://127.0.0.1:8000/)
+
 *******************************************
+
 For deactivating the virtual environment(Venv)
 => deactivate
+
+********************************************
+
+Useful Docker commands to remember
+Stop Qdrant           =>	docker stop qdrant
+Start it again later  =>	docker start qdrant
+Check if running      =>	docker ps
+Check all containers (including stopped)  => 	docker ps -a
+Delete the container entirely             =>	docker rm qdrant
+
+*********************************************
+
+# Pull and start Qdrant (runs in background)
+docker run -d --name qdrant -p 6333:6333 qdrant/qdrant
+ 
+# Verify it is running — you should see 'qdrant' listed
+docker ps
+ 
+# Open this URL in your browser to see the Qdrant dashboard:
+# http://localhost:6333/dashboard
+
+********************************************
+
+
