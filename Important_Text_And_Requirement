@@ -1,6 +1,29 @@
 Run this to create the virtual environment: 
 source venv/bin/activate
-
-
+******************************************
 Resource Collection:
 https://srisrithakuranukulchandra.com/download-categories/original-sri-sri-thakurs-literature/
+******************************************
+Update to GitHub:
+
+git add .
+git commit -m "Brief description of what you changed"
+git push
+******************************************
+
+To start the project, you need to do three things:
+
+Start Frontend: (Inside frontend, open a terminal and type this)
+=> npm start
+
+
+Start Virtual Environment: (Inside the guru-platform, open a terminal and type this)
+=> source venv/bin/activate
+
+
+Start Backend: (After starting virtual environment or inside venv, type this)
+=> uvicorn main:app --reload --port 8000
+
+*******************************************
+For deactivating the virtual environment(Venv)
+=> deactivate
