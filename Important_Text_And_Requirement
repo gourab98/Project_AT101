@@ -1,3 +1,55 @@
+************************************************
+How to start this project?
+
+=> Here is the step-by-step procedure to start the project
+
+1. You need to open the Docker Desktop app from you pc.
+
+2. Start Docker Qdrant (vector database) using this command
+	=> docker start qdrant
+	(Check: http://localhost:6333/dashboard)
+	(Check: docker ps)
+
+3. Start Ollama (local LLM) using this command
+	=> ollama serve &
+
+4. Start Virtual Environment (Inside the atguru-platform) using this command
+	=> source venv/bin/activate
+
+5. Start FastAPI backend (Inside the atguru-platform) using this command
+	=> uvicorn main:app --reload --port 8000
+	(Check: http://127.0.0.1:8000/)
+
+6. Start React Frontend (Inside the atguru-platform) using this command
+	=> npm start
+	(Check: http://localhost:3000/)
+
+*************************************************
+
+How to terminate the project?
+
+=> Here is a step-by-step procedure to terminate the project
+
+1. End the FastAPI backend, in the running bash/terminal, use this command
+	=> control + c
+
+2. End the virtual environment in the same bash/terminal(Which has venv at the front), use this command,
+	=> deactivate
+
+3. To terminate the Ollama server, use this command
+	=> pkill ollama
+
+4. End the React Frontend in the npm running server, use this command
+	=> control + c
+
+5. End the Docker Qdrant (vector database) using this command
+	=> docker stop qdrant
+	(Check: docker ps)
+
+6. Close the Docker Desktop app from you pc manullay.
+
+********************************************************
+
 Resource Collection:
 https://srisrithakuranukulchandra.com/download-categories/original-sri-sri-thakurs-literature/
 
@@ -18,7 +70,7 @@ Start Frontend: (Inside frontend, open a terminal and type this)
 
 (Check: http://localhost:3000/)
 
-Start Virtual Environment: (Inside the guru-platform, open a terminal and type this)
+Start Virtual Environment: (Inside the atguru-platform, open a terminal and type this)
 => source venv/bin/activate
 
 
@@ -44,7 +96,7 @@ Delete the container entirely             =>	docker rm qdrant
 
 *********************************************
 
-# Pull and start Qdrant (runs in background)
+# Pull and start Qdrant (runs in the background)
 docker run -d --name qdrant -p 6333:6333 qdrant/qdrant
  
 # Verify it is running — you should see 'qdrant' listed
@@ -55,4 +107,19 @@ docker ps
 
 ********************************************
 
+# Step 1 — Start Qdrant (vector database)
+docker start qdrant
 
+# Step 2 — Start Ollama (local LLM) — open Terminal 1
+ollama serve &
+
+# Step 3 — Start FastAPI backend — open Terminal 2
+cd /Users/gourabsaha/Downloads/Project_AT101/atguru-platform
+source venv/bin/activate
+uvicorn main:app --reload --port 8000
+
+# Step 4 — Start React frontend — open Terminal 3
+cd /Users/gourabsaha/Downloads/Project_AT101/atguru-platform/frontend
+npm start
+
+********************************************
